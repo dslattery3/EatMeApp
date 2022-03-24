@@ -15,4 +15,7 @@ Rails.application.routes.draw do
   get '/reviews', to: 'reviews#show'
   patch '/reviews/:id', to: 'reviews#update'
 
+
+  post '/recipes', to: 'recipes#create'
+  patch '/recipes/:id', to: 'recipes#update'
 end
