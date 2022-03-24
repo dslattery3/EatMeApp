@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   post '/reviews', to: 'reviews#create'
   delete '/reviews/:id', to: 'reviews#destroy'
-  get '/reviews', to: 'reviews#show'
+  get '/reviews/:recipe_id', to: 'reviews#show'
   patch '/reviews/:id', to: 'reviews#update'
 
 
