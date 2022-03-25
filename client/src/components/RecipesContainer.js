@@ -1,14 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import RecipeCard from "./RecipeCard";
 
-function RecipesContainer() {
-  const [recipes, setRecipes] = useState();
-  fetch(`/recipes`)
-    .then((r) => r.json())
-    .then((data) => {
-      setRecipes(data);
-      console.log(typeof data);
-    });
+function RecipesContainer({recipes}) {
+
 
   const recipeCards = recipes.map((r) => {
     return <RecipeCard r={r} key={r.id} />;

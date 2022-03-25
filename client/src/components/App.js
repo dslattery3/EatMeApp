@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Switch, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import LoginPage from "./LoginPage";
@@ -11,6 +11,15 @@ import LogOut from "./LogOut";
 import "../index.css";
 
 function App() {
+  const [recipes, setRecipes] = useState([]);
+  useEffect(() => {
+    fetch(`/recipes`)
+    .then((r) => r.json())
+    .then((data) => {
+      setRecipes(data);
+    })
+  }, [])
+
   return (
     <div className="App">
       <NavBar />
@@ -24,11 +33,11 @@ function App() {
         </Route>
 
         <Route path="/recipes/:id">
-          <RecipePage />
+          <RecipePage recipes={recipes}/>
         </Route>
 
         <Route exact path="/recipes">
-          <RecipesContainer />
+          <RecipesContainer recipes={recipes}/>
         </Route>
 
         <Route path="/me">
