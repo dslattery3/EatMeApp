@@ -1,6 +1,11 @@
 class RecipesController < ApplicationController
  before_action :authorize
+     
+    def index
+        recipes = Recipe.all
+        render json: recipes, status: :ok
 
+    end
 
     def create
         recipe = Recipe.create!( recipe_params )

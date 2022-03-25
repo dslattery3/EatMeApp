@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get '/reviews/:recipe_id', to: 'reviews#show'
   patch '/reviews/:id', to: 'reviews#update'
 
-
+  get '/recipes', to: 'recipes#index'
   post '/recipes', to: 'recipes#create'
   patch '/recipes/:id', to: 'recipes#update'
 end
