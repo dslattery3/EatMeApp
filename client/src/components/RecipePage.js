@@ -8,7 +8,6 @@ function RecipePage({recipes}) {
   const directions = recipe.directions.split('.').map(d => {
     return <li>{d}</li>
   })
-  // const ingredients = recipe.ingredients
   const ingredients = recipe.ingredients.split('.').map(i => {
     return <li>{i}</li>
   })
@@ -27,15 +26,6 @@ function RecipePage({recipes}) {
           {directions}
         </ol>
       </div>
-
-      
-
-
-
-
-
-
-
     </div>
   )
 }

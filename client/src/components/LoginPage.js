@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-function LoginPage() {
+function LoginPage({setUser, navigate}) {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const handleUsername = (e) => setUsername(e.target.value)
@@ -19,7 +19,11 @@ function LoginPage() {
       })
     })
       .then(r => r.json())
-      .then(console.log)
+      .then(data => {
+        setUser(data)
+        navigate('/me')
+      })
+
   }
   
   return (

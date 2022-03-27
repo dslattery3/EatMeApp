@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Switch, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import NavBar from "./NavBar";
 import LoginPage from "./LoginPage";
 import RecipePage from "./RecipePage";
@@ -11,47 +11,38 @@ import LogOut from "./LogOut";
 import "../index.css";
 
 function App() {
-  const [recipes, setRecipes] = useState([]);
+  const [user, setUser] = useState(null)
+
+  const [recipes, setRecipes] = useState([])
   useEffect(() => {
     fetch(`/recipes`)
     .then((r) => r.json())
     .then((data) => {
-      setRecipes(data);
+      setRecipes(data)
     })
   }, [])
+
+  const navigate = useNavigate()
 
   return (
     <div className="App">
       <NavBar />
-      <Switch>
-        <Route path="/login">
-          <LoginPage />
-        </Route>
+      <Routes>
+        <Route path="/login" element={<LoginPage setUser={setUser} navigate={navigate}/>} />
 
-        <Route path="/signup">
-          <SignupPage />
-        </Route>
+        <Route path="/signup" element={<SignupPage />} />
 
-        <Route path="/recipes/:id">
-          <RecipePage recipes={recipes}/>
-        </Route>
+        <Route path="/recipes/:id" element={<RecipePage recipes={recipes}/>} />
 
-        <Route exact path="/recipes">
-          <RecipesContainer recipes={recipes}/>
-        </Route>
+        <Route exact path="/recipes" element={<RecipesContainer recipes={recipes}/>} />
+          
+        <Route path="/me" element={<UserPage user={user} setUser={setUser}/>}/>
 
-        <Route path="/me">
-          <UserPage />
-        </Route>
+        <Route path="/logout" element={<LogOut setUser={setUser} navigate={navigate}/>} />
 
-        <Route path="/logout">
-          <LogOut />
-        </Route>
+        <Route exact path="/" element={<HomePage />}/>
 
-        <Route exact path="/">
-          <HomePage />
-        </Route>
-      </Switch>
+      </Routes>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 
-function LogOut() {
+function LogOut({navigate, setUser}) {
+
     const handleClick = (e) => {
         fetch(`/logout`,{
             method: 'DELETE',
@@ -10,7 +11,10 @@ function LogOut() {
             body: JSON.stringify()
           })
             .then(r => r.json())
-            .then(console.log)
+            .then(data => {
+              setUser(null)
+              navigate('/')
+            })
     }
 
   return (
@@ -18,10 +22,6 @@ function LogOut() {
         <h1>LogOut</h1>
 
         <button onClick={(e) => handleClick()}>LogOut</button>
-
-
-
-
 
     </div>
   )
