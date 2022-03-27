@@ -3,8 +3,7 @@ import {useParams} from 'react-router-dom'
 
 function RecipePage({recipes}) {
   const {id} = useParams()
-  let recipe = recipes.find(r => r.id == id )
-
+  let recipe = recipes.find(r => r.id === parseInt(id) )
   const directions = recipe.directions.split('.').map(d => {
     return <li>{d}</li>
   })

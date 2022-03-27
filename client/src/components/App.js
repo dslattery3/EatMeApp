@@ -12,6 +12,14 @@ import "../index.css";
 
 function App() {
   const [user, setUser] = useState(null)
+  useEffect(()=>{
+    fetch('/me')
+      .then(r => {
+        if(r.ok){
+          r.json().then(data=>setUser(data))
+        }
+      })
+  },[])
 
   const [recipes, setRecipes] = useState([])
   useEffect(() => {
@@ -24,6 +32,8 @@ function App() {
 
   const navigate = useNavigate()
 
+  if (!user) return <LoginPage setUser={setUser}/>
+
   return (
     <div className="App">
       <NavBar />
@@ -32,7 +42,7 @@ function App() {
 
         <Route path="/signup" element={<SignupPage />} />
 
-        <Route path="/recipes/:id" element={<RecipePage recipes={recipes}/>} />
+        <Route path="/recipes/recipes/:id" element={<RecipePage recipes={recipes}/>} />
 
         <Route exact path="/recipes" element={<RecipesContainer recipes={recipes}/>} />
           

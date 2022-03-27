@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function RecipeCard({ r }) {
   return (
-    <Link to={`recipes/${r.id}`} className="recipeCard">
+    <NavLink to={`recipes/${r.id}`} className="recipeCard">
       RecipeCard
       <h4>{r.name}</h4>
       <h5>
@@ -11,7 +11,7 @@ function RecipeCard({ r }) {
       </h5>
       <p>{r.directions.substring(0, 10)}</p>
       <h6>{r.time_to_complete}</h6>
-    </Link>
+    </NavLink>
   );
 }
 
