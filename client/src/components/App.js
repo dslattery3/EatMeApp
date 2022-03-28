@@ -28,11 +28,9 @@ function App() {
     .then((data) => {
       setRecipes(data)
     })
-  }, [])
+  }, [user])
 
   const navigate = useNavigate()  
-
-  
 
   return (
     <div className="App">
@@ -46,7 +44,7 @@ function App() {
 
         <Route exact path="/recipes" element={<RecipesContainer recipes={recipes} />} />
         
-        <Route path="/me" element={<UserPage user={user} setUser={setUser} />}/>
+        <Route exact path="/me" element={<UserPage user={user} setUser={setUser} />}/>
 
         <Route path="/logout" element={<LogOut setUser={setUser} navigate={navigate}/>} />
 

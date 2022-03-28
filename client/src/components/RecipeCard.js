@@ -1,11 +1,9 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-function RecipeCard({ r }) {
-  const navigate = useNavigate()
-  const handleClick = () => navigate(`/${r.id}`)
+function RecipeCard({ r, fromUser }) {
   return (
-    <div onClick={()=>handleClick()} className="recipeCard">
+    <Link to={fromUser? `/recipes/${r.id}` : `${r.id}`}className="recipeCard">
       RecipeCard
       <h4>{r.name}</h4>
       <h5>
@@ -13,11 +11,17 @@ function RecipeCard({ r }) {
       </h5>
       <p>{r.directions.substring(0, 10)}</p>
       <h6>{r.time_to_complete}</h6>
-    </div>
+    </Link>
   );
 }
 
 export default RecipeCard;
+
+// populate a link in the user with just comments
+//list populated should throw you back to 
+
+
+
 
 // created_at: "2022-03-25T19:55:31.943Z"
 // directions: "Plant. Water. Seed"

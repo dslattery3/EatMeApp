@@ -7,7 +7,7 @@ function RecipePage({recipes}) {
   const directions = recipe.directions.split('.').map(d => {
     return <li>{d}</li>
   })
-  const ingredients = recipe.ingredients.split('.').map(i => {
+  const ingredients = recipe.ingredients.split(',').map(i => {
     return <li>{i}</li>
   })
 
