@@ -2,7 +2,7 @@ import React from 'react'
 import {useParams} from 'react-router-dom'
 
 function RecipePage({recipes}) {
-  
+  console.log(recipes)
   const {id} = useParams()
   let recipe = recipes.find(r => r.id === parseInt(id) )
   
@@ -16,6 +16,8 @@ function RecipePage({recipes}) {
       return <li>{i}</li>
     }
   })
+
+  const reviews = recipe.reviews.map( r => <p>{`${r.user} said: "${r.description}"`}</p>)
 
   return (
     <div className='recipe-page'>
@@ -35,9 +37,8 @@ function RecipePage({recipes}) {
             {directions}
           </ol>
         </div>
-        
         <div className='reviews'>
-          
+          {reviews}
         </div>
     </div>
   )

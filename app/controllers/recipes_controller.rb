@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
      
     def index
         recipes = Recipe.all
-        render json: recipes, status: :ok
+        render json: recipes, include: :reviews, status: :ok
     end
 
     def show

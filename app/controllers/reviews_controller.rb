@@ -11,16 +11,13 @@ class ReviewsController < ApplicationController
         head :no_content
     end
 
-    def create
-       
+    def create       
         review = Review.create!(review_params)
         render json: review, status: :created
     end
 
-    def update
-        
+    def update        
         review = Review.find_by(id: params[:id])
-   
         review.update(review_params)
         render json: review, status: :ok
     end

@@ -128,3 +128,18 @@ div > h1{
 .goodbye button{
   display: flex;
 }
+
+.reviews{
+  display: flex;
+  flex-direction: column-reverse;
+  margin-left: 15%;
+  margin-right: 15%;
+  background-color: #d674e7;
+  border-radius: 25px;
+  margin-top: 20px;
+  text-align: center;
+}
+.reviews > p {
+  padding-left: 10%;
+  padding-right: 10%;
+}
