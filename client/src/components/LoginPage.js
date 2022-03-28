@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {NavLink} from 'react-router-dom'
 
 function LoginPage({setUser, navigate}) {
   const [username, setUsername] = useState('')
@@ -21,7 +22,7 @@ function LoginPage({setUser, navigate}) {
       .then(r => r.json())
       .then(data => {
         setUser(data)
-        navigate('/me')
+        navigate('/')
       })
 
   }
@@ -35,12 +36,17 @@ function LoginPage({setUser, navigate}) {
       </div>
       <div>
       <form className='login-form' onSubmit={(e) => handleLogin(e)}>
-          <label>Username</label>
-          <input type='text' value={username} placeholder='username' onChange={(e) => handleUsername(e)} />
-          <label>Password</label>
-          <input type='password' value={password} placeholder='password' onChange={(e) => handlePassword(e)} />
-          <button type='submit'>Login</button>
-        </form>
+        <label>Username</label>
+        <input type='text' value={username} placeholder='username' onChange={(e) => handleUsername(e)} />
+        <label>Password</label>
+        <input type='password' value={password} placeholder='password' onChange={(e) => handlePassword(e)} />
+        <button type='submit'>Login</button>
+      </form>
+      <NavLink to='/signup'>
+        <button> SignUp </button>
+      </NavLink>
+
+
       </div>
 
 

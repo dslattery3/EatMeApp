@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   patch '/reviews/:id', to: 'reviews#update'
 
   get '/recipes', to: 'recipes#index'
+  get '/recipes/:id', to: 'recipes#show'
   post '/recipes', to: 'recipes#create'
   patch '/recipes/:id', to: 'recipes#update'
 end

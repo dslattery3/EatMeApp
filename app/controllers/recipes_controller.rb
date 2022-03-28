@@ -1,11 +1,17 @@
 class RecipesController < ApplicationController
- before_action :authorize
+    before_action :authorized
+
      
     def index
         recipes = Recipe.all
         render json: recipes, status: :ok
-
     end
+
+    def show
+        recipe = Recipe.find_by(id: params[:id])
+        render json: recipe, status: :ok
+    end
+
 
     def create
         recipe = Recipe.create!( recipe_params )

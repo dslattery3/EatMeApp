@@ -1,7 +1,7 @@
 import React from 'react'
 
 function LogOut({navigate, setUser}) {
-
+  
     const handleClick = (e) => {
         fetch(`/logout`,{
             method: 'DELETE',

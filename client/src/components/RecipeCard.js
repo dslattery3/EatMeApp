@@ -1,9 +1,11 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function RecipeCard({ r }) {
+  const navigate = useNavigate()
+  const handleClick = () => navigate(`/${r.id}`)
   return (
-    <NavLink to={`recipes/${r.id}`} className="recipeCard">
+    <div onClick={()=>handleClick()} className="recipeCard">
       RecipeCard
       <h4>{r.name}</h4>
       <h5>
@@ -11,7 +13,7 @@ function RecipeCard({ r }) {
       </h5>
       <p>{r.directions.substring(0, 10)}</p>
       <h6>{r.time_to_complete}</h6>
-    </NavLink>
+    </div>
   );
 }
 

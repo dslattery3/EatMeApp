@@ -30,9 +30,9 @@ function App() {
     })
   }, [])
 
-  const navigate = useNavigate()
+  const navigate = useNavigate()  
 
-  if (!user) return <LoginPage setUser={setUser}/>
+  
 
   return (
     <div className="App">
@@ -42,15 +42,15 @@ function App() {
 
         <Route path="/signup" element={<SignupPage />} />
 
-        <Route path="/recipes/recipes/:id" element={<RecipePage recipes={recipes}/>} />
+        <Route path="/recipes/:id" element={<RecipePage recipes={recipes}/>} />
 
-        <Route exact path="/recipes" element={<RecipesContainer recipes={recipes}/>} />
-          
-        <Route path="/me" element={<UserPage user={user} setUser={setUser}/>}/>
+        <Route exact path="/recipes" element={<RecipesContainer recipes={recipes} />} />
+        
+        <Route path="/me" element={<UserPage user={user} setUser={setUser} />}/>
 
         <Route path="/logout" element={<LogOut setUser={setUser} navigate={navigate}/>} />
 
-        <Route exact path="/" element={<HomePage />}/>
+        <Route exact path="/" element={<HomePage user={user} />}/>
 
       </Routes>
     </div>

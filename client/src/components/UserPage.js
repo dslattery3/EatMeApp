@@ -3,7 +3,7 @@ import RecipeCard from './RecipeCard'
 import ReviewCard from './ReviewCard'
 
 function UserPage({user}) {
- console.log(user)
+  console.log(user)
   const userRecipes = user.recipes.map(r => <RecipeCard key={r.id} r={r}/>)
   const userReviews = user.reviews.map(r => <ReviewCard key={r.id} r={r} />)
  
