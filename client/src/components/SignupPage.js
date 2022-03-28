@@ -22,19 +22,19 @@ function SignupPage() {
           .then(console.log)
       }
 
-
   return (
     <div>
-      <h1>Signup Page</h1>
-
-      <div className='form-container'>
-        Login/Signup Form Container
-        <form className='login-form' onSubmit={(e) => handleSubmit(e)}>
+      <div align='center' className='form-image'>
+        <img src={require('../images/eatme_signup.png')} alt='eatme_signup' />
+      </div>
+      <h1 align='center'>Join the Horde</h1>
+      <div className='form'>
+        <form className='signup-form' onSubmit={(e) => handleSubmit(e)}>
           <label>Username</label>
           <input type='text' value={username} placeholder='username' onChange={(e) => handleUsername(e)} />
           <label>Password</label>
           <input type='password' value={password} placeholder='password' onChange={(e) => handlePassword(e)} />
-          <button type='submit'>Submit</button>
+          <button type='submit'>Submit to the Horde 👹 </button>
         </form>
       <NavLink to='/login'>
         <button> Login </button>

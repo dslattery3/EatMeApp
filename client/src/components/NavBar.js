@@ -5,16 +5,16 @@ function NavBar() {
   return (
     <div className='navbar'>
       <NavLink exact to='/'>
-        <button> 🏡 </button>
+        <button> Home 🏡 </button>
       </NavLink>
       <NavLink to='/recipes'>
-        <button> 🍴 </button>
+        <button> Recipes 🍴 </button>
       </NavLink>
       <NavLink to='/me'>
-        <button> 👤 </button>
+        <button> My Page 👤 </button>
       </NavLink>
       <NavLink to='/logout'>
-        <button> ⚰️ </button>
+        <button> Log Out ⚰️ </button>
       </NavLink>
     </div>
   )

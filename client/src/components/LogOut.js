@@ -18,9 +18,9 @@ function LogOut({navigate, setUser}) {
     }
 
   return (
-    <div>
-        <h1>LogOut</h1>
-
+    <div className='goodbye'>
+        <h1 align='center'>LogOut</h1>
+        <img src={require('../images/eatme_logout.png')} alt='goodbye photo'/>
         <button onClick={(e) => handleClick()}>LogOut</button>
 
     </div>

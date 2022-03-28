@@ -13,7 +13,7 @@ function UserPage({user}) {
       <div className='container'>
         {userRecipes}
       </div>
-      <h3 align='center'>{`${user.username}'s Reviews`}</h3>     
+      <h3 align='center' className='user-reviews'>{`${user.username}'s Reviews`}</h3>     
       <div className='container'>
         {userReviews}
       </div>      

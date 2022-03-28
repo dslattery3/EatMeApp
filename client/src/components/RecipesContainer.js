@@ -9,7 +9,7 @@ function RecipesContainer({recipes}) {
   return (
     <div>
       <h1 align='center'>Recipes</h1>
-      <div>searchbar goes here</div>
+      {/* <div>searchbar goes here</div> */}
       <div className="container">
         {recipeCards}
       </div>

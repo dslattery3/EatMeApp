@@ -19,31 +19,32 @@ function LoginPage({setUser, navigate}) {
         password: password
       })
     })
-      .then(r => r.json())
-      .then(data => {
-        setUser(data)
-        navigate('/')
-      })
-
+      .then(r => {
+        if (r.ok){
+          r.json().then(data => {
+            setUser(data)
+            navigate('/')
+          })
+        }
+     })
   }
   
   return (
     <div>
-      <h1>Login Page</h1>
-
-      <div className='form'>
-        Login Form Container
+      <div align='center' className='form-image'>
+        <img src={require('../images/eatme_login.png')} alt='eatme_login' />
       </div>
-      <div>
+      <h1 align='center'>Welcome Back My Fellow Beast</h1>
+      <div className='form'>
       <form className='login-form' onSubmit={(e) => handleLogin(e)}>
         <label>Username</label>
         <input type='text' value={username} placeholder='username' onChange={(e) => handleUsername(e)} />
         <label>Password</label>
         <input type='password' value={password} placeholder='password' onChange={(e) => handlePassword(e)} />
-        <button type='submit'>Login</button>
+        <button type='submit'>Feed Me</button>
       </form>
       <NavLink to='/signup'>
-        <button> SignUp </button>
+        <button> SignUp 🤤 </button>
       </NavLink>
 
 

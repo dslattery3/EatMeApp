@@ -7,7 +7,9 @@ function HomePage({user}) {
       <h1> EatMe </h1>
       <div className='home-container'>
         <img src={require('../images/EatME1.jpg')} alt='eatme logo'/>
-        <p>About our app</p>
+        <p>
+          Welcome to EatMe where eating more is always encouraged. In order to view our recipes from our catalog you will need to login or register. Once you're signed in, you'll be able to feed the beast inside.
+        </p>
       </div>
       {!user && <div className='signup-login-container'>
       <NavLink to='/signup'>
