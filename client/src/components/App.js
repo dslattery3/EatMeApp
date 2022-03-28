@@ -20,7 +20,7 @@ function App() {
         }
       })
   },[])
-
+  
   const [recipes, setRecipes] = useState([])
   useEffect(() => {
     fetch(`/recipes`)

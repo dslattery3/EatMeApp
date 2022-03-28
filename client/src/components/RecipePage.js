@@ -1,11 +1,11 @@
 import React from 'react'
 import {useParams} from 'react-router-dom'
-import RecipesContainer from './RecipesContainer'
 
 function RecipePage({recipes}) {
   
   const {id} = useParams()
   let recipe = recipes.find(r => r.id === parseInt(id) )
+  
   const directions = recipe.directions.split('.').map(d => {
     if (d !== ''){
       return <li>{d}</li>
