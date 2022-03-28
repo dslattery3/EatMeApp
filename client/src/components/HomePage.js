@@ -3,10 +3,10 @@ import {NavLink} from 'react-router-dom'
 
 function HomePage({user}) {
   return (
-    <div className='homepage'>
+    <div align ='center' className='homepage'>
       <h1> EatMe </h1>
       <div className='home-container'>
-        <img src='' alt='eatme logo'/>
+        <img src={require('../images/EatME1.jpg')} alt='eatme logo'/>
         <p>About our app</p>
       </div>
       {!user && <div className='signup-login-container'>

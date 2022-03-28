@@ -19,9 +19,7 @@ function RecipeCard({ r, fromUser }) {
   return (
     <Link to={fromUser? `/recipes/${r.id}` : `${r.id}`} className="card">
       <h4>{r.name}</h4>
-      <h5>
-        <img src={r.image_url} alt={r.name} />
-      </h5>
+      <img src={r.image_url} alt={r.name} />
       <p>Directions: {`${r.directions.substring(0, 50)}...`}</p>
       <h6>Time: {formatTime(r.time_to_complete)}</h6>
     </Link>

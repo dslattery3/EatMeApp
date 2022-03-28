@@ -34,7 +34,7 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar />
+      {user && <NavBar /> }
       <Routes>
         <Route path="/login" element={<LoginPage setUser={setUser} navigate={navigate}/>} />
 
