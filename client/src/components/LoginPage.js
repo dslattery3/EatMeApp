@@ -31,7 +31,7 @@ function LoginPage({setUser, navigate}) {
     <div>
       <h1>Login Page</h1>
 
-      <div className='form-container'>
+      <div className='form'>
         Login Form Container
       </div>
       <div>

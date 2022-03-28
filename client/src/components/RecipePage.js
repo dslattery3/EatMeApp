@@ -1,7 +1,9 @@
 import React from 'react'
 import {useParams} from 'react-router-dom'
+import RecipesContainer from './RecipesContainer'
 
 function RecipePage({recipes}) {
+  
   const {id} = useParams()
   let recipe = recipes.find(r => r.id === parseInt(id) )
   const directions = recipe.directions.split('.').map(d => {
@@ -13,18 +15,19 @@ function RecipePage({recipes}) {
 
   return (
     <div className='recipe-page'>
-      <h1>{recipe.name}</h1>
+      <h1 align='center'>{recipe.name}</h1>
       <div className='recipe-page-image'>
-        <img src={recipe.image_url} alt={recipe.name} />
+        <img className='recipe-image' src={recipe.image_url} alt={recipe.name} />
       </div>
-      <div className='ingredient-container'>
-        {ingredients}
-      </div>
-      <div className='direction-cotainer'>
+        <ul>
+          {ingredients}
+        </ul>
         <ol>
           {directions}
         </ol>
-      </div>
+        <div className='reviews'>
+          
+        </div>
     </div>
   )
 }

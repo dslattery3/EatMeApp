@@ -11,3 +11,56 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container{
+  background: grey;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.card{
+  width: 250px;
+  height: auto;
+  text-align: center;
+  border: thin solid black;
+  border-radius: 30px;
+  padding: 75px;
+}
+
+.review-container{
+
+}
+
+.recipe-page-image{
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+ul {
+  background: #3399ff;
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
+ul li {
+  background: #cce5ff;
+  margin: 5px;
+}
+
+ol {
+  background: #ff9999;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+ol li {
+  background: #ffe5e5;
+  padding: 5px;
+}
+
+
+
+

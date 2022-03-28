@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {NavLink} from 'react-router-dom'
 
 function SignupPage() {
     const [username, setUsername] = useState('')
@@ -35,6 +36,9 @@ function SignupPage() {
           <input type='password' value={password} placeholder='password' onChange={(e) => handlePassword(e)} />
           <button type='submit'>Submit</button>
         </form>
+      <NavLink to='/login'>
+        <button> Login </button>
+      </NavLink>
       </div>
     </div>
 

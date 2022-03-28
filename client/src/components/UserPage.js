@@ -6,17 +6,15 @@ function UserPage({user}) {
   // console.log(user)
   const userRecipes = user.recipes.map(r => <RecipeCard key={r.id} r={r} fromUser={true}/>)
   const userReviews = user.reviews.map(r => <ReviewCard key={r.id} r={r} />)
-  console.log(user.recipes)
-  console.log(user.reviews)
+
   return (
     <div>
-      <h1>User's Page</h1>
-      <div className='user-recipe-container'>
-        Recipe Container
+      <h1 align='center'>{`${user.username}'s Page`}</h1>
+      <div className='container'>
         {userRecipes}
-      </div>      
-      <div className='user-review-container'>
-        Review Container
+      </div>
+      <h3 align='center'>{`${user.username}'s Reviews`}</h3>     
+      <div className='container'>
         {userReviews}
       </div>      
     </div>

@@ -12,8 +12,7 @@ function RecipesContainer({recipes}) {
 
       <div>searchbar goes here</div>
 
-      <div className="recipe-card-container">
-        Recipe Card Container
+      <div className="container">
         {recipeCards}
       </div>
     </div>
