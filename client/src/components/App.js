@@ -37,6 +37,11 @@ function App() {
 
   const navigate = useNavigate()
 
+  console.log('user', user)
+  console.log('reviews', reviews)
+  console.log('recipes', recipes)
+
+
   return (
     <div className="App">
       {user && <NavBar /> }
@@ -49,7 +54,7 @@ function App() {
 
         <Route exact path="/recipes" element={<RecipesContainer recipes={recipes} />} />
         
-        <Route exact path="/me" element={<UserPage user={user} setUser={setUser} />}/>
+        <Route exact path="/me" element={<UserPage user={user} setUser={setUser} reviews={reviews}/>}/>
 
         <Route path="/logout" element={<LogOut setUser={setUser} navigate={navigate}/>} />
 
