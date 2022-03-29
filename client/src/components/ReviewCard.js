@@ -8,11 +8,12 @@ import React, {useState} from 'react'
 // user: "a"
 
 function ReviewCard({r}) {
-  console.log(r, 'hello')
   const [isEdited, setIsEdited] = useState(false)
+
   if (r?.created_at !== r?.updated_at){
     setIsEdited(true)
   }
+  //find a better way to format date
   const reviewDate = (r.created_at.substring(5,8) + r.created_at.substring(8,10) + '-' + r.created_at.substring(0,4))
   const reviewUpdate = (r.updated_at.substring(5,8) + r.updated_at.substring(8,10) + '-' + r.updated_at.substring(0,4))
 
