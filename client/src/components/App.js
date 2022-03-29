@@ -52,13 +52,13 @@ function App() {
 
         <Route path="/recipes/:id" element={<RecipePage recipes={recipes} user={user} setRecipes={setRecipes} setUser={setUser} reviews={reviews} setReviews={setReviews}/>} />
 
-        <Route exact path="/recipes" element={<RecipesContainer recipes={recipes} />} />
+        <Route path="/recipes" element={<RecipesContainer recipes={recipes} />} />
         
-        <Route exact path="/me" element={<UserPage user={user} setUser={setUser} reviews={reviews}/>}/>
+        <Route  path="/me" element={<UserPage user={user} setUser={setUser} reviews={reviews}/>}/>
 
         <Route path="/logout" element={<LogOut setUser={setUser} navigate={navigate}/>} />
 
-        <Route exact path="/" element={<HomePage user={user} />}/>
+        <Route path="/" element={<HomePage user={user} />}/>
 
       </Routes>
     </div>

@@ -1,5 +1,5 @@
 class ReviewSerializer < ActiveModel::Serializer
-  attributes :id, :description, :user, :recipe, :created_at, :updated_at, :image_url, :recipe_id
+  attributes :id, :description, :user, :recipe, :created_at, :updated_at, :image_url, :recipe_id, :user_id
   
   def user
     object.user.username

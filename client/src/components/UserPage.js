@@ -1,12 +1,14 @@
 import React from "react";
+import RecipeCard from "./RecipeCard";
 import ReviewCard from "./ReviewCard";
 
-function UserPage({ user, setUser, reviews }) {
+function UserPage({ user, setUser }) {
   console.log(user)
   // const userRecipes = user.recipes.map((r) => (
   //   <RecipeCard key={r.id} r={r} fromUser={true} />
   // ));
-  const userReviews = reviews?.map((r) => <ReviewCard key={r.id} r={r} user={user} setUser={setUser}/>);
+
+  const userReviews = user.reviews.map((r) => <ReviewCard key={r.id} r={r} user={user} setUser={setUser} />);
 
   return (
     <div>
