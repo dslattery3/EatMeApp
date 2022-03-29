@@ -45,6 +45,11 @@ code {
 
 .home-container > img{
   border-radius: 30px;
+  max-width: 75%;
+}
+
+.home-container > p{
+  max-width: 75%;
 }
 
 .recipe-image{
@@ -131,7 +136,7 @@ div > h1{
 
 .reviews{
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   margin-left: 15%;
   margin-right: 15%;
   background-color: #d674e7;

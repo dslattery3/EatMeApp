@@ -6,8 +6,6 @@ function RecipesContainer({recipes}) {
     return <RecipeCard r={r} key={r.id} fromUser={false}/>;
   });
 
-  console.log(recipes)
-
   return (
     <div>
       <h1 align='center'>Recipes</h1>

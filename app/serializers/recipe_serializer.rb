@@ -1,5 +1,4 @@
 class RecipeSerializer < ActiveModel::Serializer
-  attributes :id, :directions, :image_url, :name, :ingredients, :time_to_complete, :reviews
+  attributes :id, :directions, :image_url, :name, :ingredients, :time_to_complete
 
-  has_many :reviews
 end

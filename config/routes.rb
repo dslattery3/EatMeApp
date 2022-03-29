@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   post '/reviews', to: 'reviews#create'
+  get '/reviews', to: 'reviews#index'
   delete '/reviews/:id', to: 'reviews#destroy'
   get '/reviews/:recipe_id', to: 'reviews#show'
   patch '/reviews/:id', to: 'reviews#update'

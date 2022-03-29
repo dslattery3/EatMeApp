@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-    before_action :authorize
+    before_action :authorized
 
     def show
         reviews = Review.all.where("recipe_id = ?", params[:recipe_id])
@@ -9,6 +9,11 @@ class ReviewsController < ApplicationController
     def destroy
         review = Review.find(params[:id]).destroy
         head :no_content
+    end
+
+    def index
+        reviews = Review.all
+        render json: reviews, status: :ok
     end
 
     def create       

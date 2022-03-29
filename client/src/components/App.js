@@ -25,12 +25,17 @@ function App() {
   useEffect(() => {
     fetch(`/recipes`)
     .then((r) => r.json())
-    .then((data) => {
-      setRecipes(data)
-    })
+    .then(setRecipes)
   }, [user])
 
-  const navigate = useNavigate()  
+  const [reviews, setReviews] = useState([])
+  useEffect(()=>{
+    fetch('/reviews')
+      .then(r => r.json())
+      .then(setReviews)
+  },[user])
+
+  const navigate = useNavigate()
 
   return (
     <div className="App">
@@ -40,7 +45,7 @@ function App() {
 
         <Route path="/signup" element={<SignupPage />} />
 
-        <Route path="/recipes/:id" element={<RecipePage recipes={recipes}/>} />
+        <Route path="/recipes/:id" element={<RecipePage recipes={recipes} user={user} setRecipes={setRecipes} setUser={setUser} reviews={reviews} setReviews={setReviews}/>} />
 
         <Route exact path="/recipes" element={<RecipesContainer recipes={recipes} />} />
         
