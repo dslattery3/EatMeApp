@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function ReviewCard({ r, user, setUser }) {
   const [editReview, setEditReview] = useState(false);
@@ -42,11 +43,6 @@ function ReviewCard({ r, user, setUser }) {
     r.created_at.substring(8, 10) +
     "-" +
     r.created_at.substring(0, 4);
-  const reviewUpdate =
-    r.updated_at.substring(5, 8) +
-    r.updated_at.substring(8, 10) +
-    "-" +
-    r.updated_at.substring(0, 4);
 
   const handleReview = () => {
     setEditReview(true);
@@ -76,6 +72,8 @@ function ReviewCard({ r, user, setUser }) {
     </form>
   );
 
+  const navigate = useNavigate()
+
   return (
     <div className="review-card">
       <h3>{r.recipe}</h3>
@@ -89,7 +87,8 @@ function ReviewCard({ r, user, setUser }) {
       )}
       <button onClick={handleDelete}>Remove Review</button>
       <img
-        src="https://res.cloudinary.com/dtglqdhwm/image/upload/v1648565391/hungry1_m7dpqz.png"
+        onClick={() => navigate(`/recipes/${r.id}`)}
+        src={require("../images/hungry_alien.png")}
         alt="hungryReview"
       />
     </div>
