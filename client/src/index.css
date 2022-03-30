@@ -34,6 +34,7 @@ code {
   color: whitesmoke;
   font-family: "Times New Roman", Times, serif;
   font-size: 25px;
+  margin: 10px; 
 }
 
 .card > img,
