@@ -11,18 +11,18 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-.container{
+.container {
   /* background: grey; */
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
 }
 
-.card{
+.card {
   width: 250px;
   height: auto;
   text-align: center;
@@ -43,16 +43,16 @@ code {
   border-radius: 10%;
 }
 
-.home-container > img{
+.home-container > img {
   border-radius: 30px;
   max-width: 75%;
 }
 
-.home-container > p{
+.home-container > p {
   max-width: 75%;
 }
 
-.recipe-image{
+.recipe-image {
   padding-left: 15%;
   padding-right: 15%;
   padding-top: 20px;
@@ -81,7 +81,7 @@ ol li {
   padding-bottom: 5px;
 }
 
-.ingredients{
+.ingredients {
   background-color: #985fef;
   margin-left: 25%;
   margin-right: 25%;
@@ -89,7 +89,7 @@ ol li {
   border-radius: 25px;
 }
 
-.directions{
+.directions {
   background-color: #985fef;
   margin-left: 20%;
   margin-right: 20%;
@@ -97,44 +97,46 @@ ol li {
   border-radius: 25px;
 }
 
-.form{
+.form {
   padding-left: 35%;
   padding-right: 35%;
-}
-
-div > h1{
-  padding-left: 25%;
-  padding-right: 25%;
-}
-
-.form-image{
-  padding-left: 25%;
-  padding-right: 25%;
-}
-.form-image > img{
-  border-radius: 100px;
-}
-
-.navbar{
   display: flex;
   justify-content: center;
 }
 
-.navbar button{
-  background-color: #6fb8f7;
-  width: 150px;
-}
-
-.goodbye{
+div > h1 {
   padding-left: 25%;
   padding-right: 25%;
 }
 
-.goodbye button{
+.form-image {
+  padding-left: 25%;
+  padding-right: 25%;
+}
+.form-image > img {
+  border-radius: 100px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar button {
+  background-color: #6fb8f7;
+  width: 150px;
+}
+
+.goodbye {
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
+.goodbye button {
   display: flex;
 }
 
-.reviews{
+.reviews {
   display: flex;
   flex-direction: column;
   margin-left: 15%;
@@ -147,4 +149,18 @@ div > h1{
 .reviews > p {
   padding-left: 10%;
   padding-right: 10%;
+}
+
+.submit-horde {
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.feed-me {
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.leave-review {
+  margin-top: 15px;
 }
