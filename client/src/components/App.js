@@ -44,7 +44,7 @@ function App() {
   let recipesSorted = [...recipes]
     .sort((a, b) => b.review_count - a.review_count)
     .splice(0, 3);
-  const topRecipes = recipesSorted.map((r) => <RecipeCard key={r.id} r={r} />);
+  const topRecipes = recipesSorted.map((r) => <RecipeCard key={r.id} r={r} fromRecipes={false} />);
   // console.log("topRecipes", topRecipes);
   console.log("recipesSorted", recipesSorted);
   return (

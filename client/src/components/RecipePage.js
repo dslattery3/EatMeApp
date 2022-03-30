@@ -12,12 +12,12 @@ function RecipePage({ recipes, user, setUser, reviews }) {
   console.log("reviews", reviews);
   console.log("recipes", recipes);
 
-  const directions = recipe.directions.split(".").map((d) => {
+  const directions = recipe && recipe.directions.split(".").map((d) => {
     if (d !== "") {
       return <li>{d}</li>;
     }
   });
-  const ingredients = recipe.ingredients.split(",").map((i) => {
+  const ingredients = recipe && recipe.ingredients.split(",").map((i) => {
     if (i !== "") {
       return <li>{i}</li>;
     }
@@ -74,11 +74,11 @@ function RecipePage({ recipes, user, setUser, reviews }) {
       <div align="center" className="recipe-page-image">
         <img
           className="recipe-image"
-          src={recipe.image_url}
-          alt={recipe.name}
+          src={recipe ? recipe.image_url : null}
+          alt={recipe ? recipe.name : null}
         />
       </div>
-      <h1 align="center">{recipe.name}</h1>
+      <h1 align="center">{ recipe && recipe.name}</h1>
       <div className="ingredients">
         <h3 align="center">
           <u>Ingredients</u>
@@ -89,7 +89,7 @@ function RecipePage({ recipes, user, setUser, reviews }) {
         <h3 align="center">
           <u>Directions</u>
         </h3>
-        <ol>{directions}</ol>
+        <ol>{ directions}</ol>
       </div>
       <div className="reviews">
         <h4>

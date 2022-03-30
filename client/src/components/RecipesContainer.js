@@ -3,7 +3,7 @@ import RecipeCard from "./RecipeCard";
 
 function RecipesContainer({recipes}) {
   const recipeCards = recipes.map((r) => {
-    return <RecipeCard r={r} key={r.id} fromUser={false}/>;
+    return <RecipeCard r={r} key={r.id} fromRecipes={true}/>;
   });
 
   return (
