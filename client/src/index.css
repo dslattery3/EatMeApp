@@ -36,11 +36,36 @@ code {
   font-size: 25px;
 }
 
-.card > img {
+.card > img,
+.review-card > img {
   width: 250px;
-  height: auto;
+  max-height: 200px;
   object-fit: contain;
   border-radius: 10%;
+}
+
+.review-card {
+  width: 250px;
+  height: auto;
+  text-align: center;
+  border: thin solid black;
+  border-radius: 30px;
+  padding: 75px;
+  background-color: #a58bee;
+  box-shadow: 10px 5px 5px #5c90f6;
+  color: whitesmoke;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 25px;
+}
+
+.review-card > p {
+  color: whitesmoke;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 25px;
+}
+
+.review-card > button {
+  margin: 10px;
 }
 
 .home-container > img {
@@ -65,7 +90,12 @@ ul {
   padding-right: 15%; */
 }
 
+.recipe-page-image > img {
+  border-radius: 10%;
+}
+
 ul li {
+  padding-right: 20px;
   background: #985fef;
   margin: 5px;
 }
@@ -77,22 +107,23 @@ ol {
 }
 
 ol li {
+  padding-right: 45px;
   background: #985fef;
   padding-bottom: 5px;
 }
 
 .ingredients {
   background-color: #985fef;
-  margin-left: 25%;
-  margin-right: 25%;
+  margin-left: 40%;
+  margin-right: 40%;
   padding-bottom: 5px;
   border-radius: 25px;
 }
 
 .directions {
   background-color: #985fef;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 30%;
+  margin-right: 30%;
   padding-bottom: 5px;
   border-radius: 25px;
 }
@@ -139,8 +170,8 @@ div > h1 {
 .reviews {
   display: flex;
   flex-direction: column;
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 30%;
+  margin-right: 30%;
   background-color: #d674e7;
   border-radius: 25px;
   margin-top: 20px;
@@ -163,4 +194,18 @@ div > h1 {
 
 .leave-review {
   margin-top: 15px;
+}
+
+.top-recipe-container {
+  display: flex;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.top-recipe-container > .card {
+  margin: 10px;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  align-items: center;
+  align-content: flex-start;
 }

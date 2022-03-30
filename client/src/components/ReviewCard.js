@@ -78,24 +78,20 @@ function ReviewCard({ r, user, setUser }) {
 
   return (
     <div className="review-card">
-      <h4>{r.recipe}</h4>
-      <div>
-        <img src={r.image_url} alt={r.name} />
-      </div>
+      <h3>{r.recipe}</h3>
+      <img src={r.image_url} alt={r.name} />
       <h4>{r.description}</h4>
+      <h6> Created: {reviewDate}</h6>
       {editReview ? (
         reviewForm
       ) : (
         <button onClick={() => handleReview()}>Edit Review</button>
       )}
       <button onClick={handleDelete}>Remove Review</button>
-      <p>
-        <img
-          src="https://res.cloudinary.com/dtglqdhwm/image/upload/v1648565391/hungry1_m7dpqz.png"
-          alt="hungryReview"
-        />
-        Created: {reviewDate}
-      </p>
+      <img
+        src="https://res.cloudinary.com/dtglqdhwm/image/upload/v1648565391/hungry1_m7dpqz.png"
+        alt="hungryReview"
+      />
     </div>
   );
 }

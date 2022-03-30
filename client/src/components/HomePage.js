@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-function HomePage({ user }) {
+function HomePage({ user, topRecipes }) {
   return (
     <div align="center" className="homepage">
       <h1> EatMe </h1>
@@ -24,10 +24,8 @@ function HomePage({ user }) {
           </NavLink>
         </div>
       )}
-      <div className="top-recipe-container">
-        <h3>Top Rated Recipes</h3>
-        Top Recipe Container
-      </div>
+      <h3>Top Rated Recipes</h3>
+      <div className="top-recipe-container">{topRecipes}</div>
     </div>
   );
 }
