@@ -1,16 +1,30 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-function SignupPage() {
+function SignupPage({ navigate, setUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const handleUsername = (e) => setUsername(e.target.value);
-  const handlePassword = (e) => setPassword(e.target.value);
+  const [passwordConfirm, setPasswordConfirm] = useState("")
+  const handleUsername = (e) => setUsername(e.target.value)
+  const handlePassword = (e) => setPassword(e.target.value)
+  const handleConfirm = (e) => setPasswordConfirm(e.target.value)
+
+  const passwordMatch = (p1, p2) => {
+    if (p1 && p2 && p1 === p2) {
+      return true
+    }
+    else {
+      return false
+    }
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newUser = { username: username, password: password };
-    console.log(newUser);
+    if (!passwordMatch(password, passwordConfirm)) {
+      alert('Your password and password confirmation do not match.')
+      return false
+    }
+    const newUser = { username: username, password: passwordConfirm }
     fetch(`/signup`, {
       method: "POST",
       headers: {
@@ -19,8 +33,12 @@ function SignupPage() {
       body: JSON.stringify(newUser),
     })
       .then((r) => r.json())
-      .then(console.log);
+      .then(setUser)
+
+    navigate('/')
   };
+
+
 
   return (
     <div>
@@ -43,6 +61,13 @@ function SignupPage() {
             value={password}
             placeholder="password"
             onChange={(e) => handlePassword(e)}
+          />
+          <label> Confirm Password</label>
+          <input
+            type="password"
+            value={passwordConfirm}
+            placeholder="password"
+            onChange={(e) => handleConfirm(e)}
           />
           <div align="center" className="submit-horde">
             <button type="submit">Submit to the Horde 👹 </button>

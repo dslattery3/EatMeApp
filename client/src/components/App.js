@@ -37,16 +37,11 @@ function App() {
 
   const navigate = useNavigate();
 
-  // console.log('user', user)
-  // console.log('reviews', reviews)
-  console.log("recipes", recipes);
-
   let recipesSorted = [...recipes]
     .sort((a, b) => b.review_count - a.review_count)
     .splice(0, 3);
   const topRecipes = recipesSorted.map((r) => <RecipeCard key={r.id} r={r} fromRecipes={false} />);
-  // console.log("topRecipes", topRecipes);
-  console.log("recipesSorted", recipesSorted);
+
   return (
     <div className="App">
       {user && <NavBar />}
@@ -56,7 +51,7 @@ function App() {
           element={<LoginPage setUser={setUser} navigate={navigate} />}
         />
 
-        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/signup" element={<SignupPage navigate={navigate} setUser={setUser} />} />
 
         <Route
           path="/recipes/:id"

@@ -8,15 +8,12 @@ function RecipePage({ recipes, user, setUser, reviews }) {
   const { id } = useParams();
   let recipe = recipes.find((r) => r.id === parseInt(id));
 
-  console.log("user", user);
-  console.log("reviews", reviews);
-  console.log("recipes", recipes);
-
   const directions = recipe && recipe.directions.split(".").map((d) => {
     if (d !== "") {
       return <li>{d}</li>;
     }
   });
+
   const ingredients = recipe && recipe.ingredients.split(",").map((i) => {
     if (i !== "") {
       return <li>{i}</li>;
@@ -78,7 +75,7 @@ function RecipePage({ recipes, user, setUser, reviews }) {
           alt={recipe ? recipe.name : null}
         />
       </div>
-      <h1 align="center">{ recipe && recipe.name}</h1>
+      <h1 align="center">{recipe && recipe.name}</h1>
       <div className="ingredients">
         <h3 align="center">
           <u>Ingredients</u>
@@ -89,7 +86,7 @@ function RecipePage({ recipes, user, setUser, reviews }) {
         <h3 align="center">
           <u>Directions</u>
         </h3>
-        <ol>{ directions}</ol>
+        <ol>{directions}</ol>
       </div>
       <div className="reviews">
         <h4>

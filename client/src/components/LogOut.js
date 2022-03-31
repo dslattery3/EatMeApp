@@ -1,7 +1,7 @@
 import React from "react";
 
 function LogOut({ navigate, setUser }) {
-  const handleClick = (e) => {
+  const handleClick = () => {
     fetch(`/logout`, {
       method: "DELETE",
       headers: {
@@ -10,7 +10,7 @@ function LogOut({ navigate, setUser }) {
       body: JSON.stringify(),
     })
       .then((r) => r.json())
-      .then((data) => {
+      .then(() => {
         setUser(null);
         navigate("/");
       });
@@ -23,7 +23,7 @@ function LogOut({ navigate, setUser }) {
         <img src={require("../images/eatme_logout.png")} alt="goodbye photo" />
       </div>
       <div align="center" className="logout">
-        <button onClick={(e) => handleClick()}>LogOut</button>
+        <button onClick={handleClick}>LogOut</button>
       </div>
     </div>
   );

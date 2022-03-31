@@ -8,9 +8,9 @@ User.destroy_all
 Recipe.destroy_all
 Review.destroy_all
 puts 'creating users'
-User.create(username: 'a', password: '1')
-User.create(username: 'b', password: '2')
-User.create(username: 'c', password: '3')
+User.create(username: 'Dalton', password: 'password')
+User.create(username: 'Shane', password: 'password')
+User.create(username: 'Pikachu', password: 'pikapika')
 puts 'creating recipes'
 Recipe.create(image_url: "https://c.tenor.com/_A27t2_4wH0AAAAC/peanut-butter-jelly-time-banana.gif", name: 'Bananas', ingredients: 'Love, Water, Soil, Time', directions: 'Plant. Water. Seed', time_to_complete: 200)
 Recipe.create(image_url: "https://media3.giphy.com/media/xUNd9Atxl33DCNsaty/giphy.gif", name: 'Pie', ingredients: 'Dough, Water, Filling, Time', directions: 'Lay down dough. Fill with filling. Cook', time_to_complete: 60)
@@ -26,11 +26,21 @@ Recipe.create(image_url: "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/5e
 Recipe.create(image_url: "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/b4a4b67946f344d383cb4bc35187bdc6/BFV12484_3-IngredientDinners-FB1080SQ.jpg?resize=600:*&output-format=auto&output-quality=auto", name: 'Chili-glazed Salmon', ingredients: '4 oz salmon, 3 fillets, ½ cup chili sauce, ¼ cup fresh scallions, chopped', directions: 'Preheat oven to 400°F (200˚C). In a bowl, mix together the salmon, chili sauce, and the scallions. Place the fillets on a baking tray lined with parchment paper. Spoon any leftover sauce on top of the salmon. Bake for 12-15 minutes, until the salmon is cooked but still tender.', time_to_complete: 15)
 Recipe.create(image_url: "https://img.buzzfeed.com/video-api-prod/assets/cc8e32b903c945e0b98b8e4759ba9df5/BFV4409_3IngredientPeanutButterCerealBites-Thumb1080SQ.jpg?resize=600:*&output-format=auto&output-quality=auto", name: 'Peanut Butter Cereal Bites', ingredients: 'honey, peanut butter, honey nut cereal', directions: 'Put 1 part peanut butter and 1 part honey in a bowl. Microwave for about a minute. Stir until combined. Add 3-4 parts cereal. Stir. Scoop into bit size pieces and place on wax paper to cool.', time_to_complete: 10)
 puts 'creating reviews'
-Review.create(user_id: 1, recipe_id: 1, description: 'love it')
-Review.create(user_id: 1, recipe_id: 2, description: 'sucks')
-Review.create(user_id: 2, recipe_id: 3, description: 'would do again')
-Review.create(user_id: 2, recipe_id: 1, description: 'not bad')
-Review.create(user_id: 3, recipe_id: 2, description: 'took too long')
-Review.create(user_id: 3, recipe_id: 3, description:  'burnt my pan')
+Review.create(user_id: 1, recipe_id: 1, description: "There's enough garlic in here to kill every vampire in Europe.")
+Review.create(user_id: 1, recipe_id: 2, description: "Why did the chicken cross the road? Because you didn't f—ing cook it!")
+Review.create(user_id: 2, recipe_id: 3, description: "After trying Hawaiian pizza: This isn't a pizza, this is a mistake. This is an Italian tragedy.")
+Review.create(user_id: 2, recipe_id: 1, description: "This fish is so raw, he's still finding Nemo.")
+Review.create(user_id: 3, recipe_id: 2, description: "This soufflé has sunk so badly James Cameron wants to make a film about it.")
+Review.create(user_id: 3, recipe_id: 3, description: 'i done burnt my pan')
+Review.create(user_id: 1, recipe_id: 7, description: "You added so much salt and pepper I can hear the dish singing 'Push It.'")
+Review.create(user_id: 1, recipe_id: 5, description: "This crab is so undercooked I can still hear it singing 'Under the Sea!'")
+Review.create(user_id: 3, recipe_id: 2, description: "I think I gave myself food poisoning?")
+Review.create(user_id: 2, recipe_id: 2, description: "i don't feel so gooo")
+Review.create(user_id: 1, recipe_id: 2, description: "best recipe ever")
+Review.create(user_id: 1, recipe_id: 5, description: "I've never, ever, ever, ever, ever met someone I believe in as little as you.")
+Review.create(user_id: 3, recipe_id: 5, description: "the trick is to never stop stirring")
+Review.create(user_id: 3, recipe_id: 7, description: "My gran could do better!")
+Review.create(user_id: 2, recipe_id: 7, description: "This pizza is so disgusting, if you took it to Italy you'll get arrested.")
+
 
 puts 'SUCCESS'
